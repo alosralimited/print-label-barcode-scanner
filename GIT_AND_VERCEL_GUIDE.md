@@ -1,6 +1,7 @@
 # 🚀 Complete Git & Vercel Deployment Guide
 
 ## Table of Contents
+
 1. [Git Setup & Basics](#git-setup--basics)
 2. [GitHub Setup](#github-setup)
 3. [Vercel Setup & Deployment](#vercel-setup--deployment)
@@ -24,6 +25,7 @@ git --version
 **Expected output:** `git version 2.xx.x`
 
 **If not installed:**
+
 1. Download from: https://git-scm.com/download/win
 2. Run the installer
 3. Use default settings
@@ -62,6 +64,7 @@ git status
 ```
 
 **What it shows:**
+
 - Red files = changed but not staged
 - Green files = staged and ready to commit
 - Untracked files = new files Git doesn't know about
@@ -71,6 +74,7 @@ Add files to be committed:
 ```powershell
 git add .
 ```
+
 - The `.` means "add all changed files"
 - Or add specific file: `git add filename.txt`
 
@@ -87,6 +91,7 @@ git commit -m "Your message describing what changed"
 ```
 
 **Good commit messages:**
+
 - ✅ `git commit -m "Add camera permission for Android"`
 - ✅ `git commit -m "Fix barcode scanner on iOS"`
 - ✅ `git commit -m "Update deployment guide"`
@@ -98,6 +103,7 @@ Send your commits to GitHub:
 ```powershell
 git push origin main
 ```
+
 - `origin` = your GitHub repository
 - `main` = the branch name
 
@@ -249,6 +255,7 @@ When you push for the first time, GitHub will ask for credentials:
 ### View Your Repository Online
 
 After pushing:
+
 1. Go to: `https://github.com/alosralimited/print-label-barcode-scanner`
 2. You'll see all your files, commits, and history
 3. Share this URL with anyone to show your code
@@ -259,6 +266,7 @@ After pushing:
 
 ### What is Vercel?
 Vercel is a hosting platform that deploys your web app to the internet. It's free for personal projects and provides:
+
 - ✅ Fast global CDN
 - ✅ Automatic HTTPS (required for camera on iPhone)
 - ✅ Auto-deploy when you push to GitHub
@@ -297,34 +305,41 @@ Vercel is a hosting platform that deploys your web app to the internet. It's fre
 You'll see a configuration page. **This is the most important step!**
 
 #### Project Name
+
 - Leave as default: `print-label-barcode-scanner`
 - Or rename to anything you like (this becomes part of your URL)
 
 #### Framework Preset
+
 - Click the dropdown
 - Select: **"Other"**
 - Why: Flutter isn't in the list, and we're deploying static files
 
 #### Root Directory
+
 - Leave as: **`./`** (default)
 - Don't change this
 
 #### Build Settings - ⚠️ CRITICAL SETTINGS
 
 **Build Command:**
+
 - **LEAVE THIS EMPTY** (delete any text)
 - Why: We're deploying pre-built files from `build/web`. Vercel doesn't have Flutter installed, so it can't build.
 
 **Output Directory:**
+
 - Enter exactly: **`build/web`**
 - This is where your built website files are
 - ⚠️ If this is wrong, you'll get a 404 error!
 
 **Install Command:**
+
 - **LEAVE THIS EMPTY**
 - Why: No need to install dependencies when serving static files
 
 #### Environment Variables
+
 - Skip this (not needed for static sites)
 
 ---
@@ -366,16 +381,19 @@ After deployment:
 After deployment, explore your dashboard:
 
 **Deployments Tab:**
+
 - See all past deployments
 - Each push to GitHub creates a new deployment
 - Click any deployment to see logs
 
 **Settings Tab:**
+
 - Change domain name
 - Update build settings
 - Delete project
 
 **Domains Tab:**
+
 - Your free `.vercel.app` domain
 - Add custom domains (e.g., `mybarcodeapp.com`)
 
@@ -384,18 +402,21 @@ After deployment, explore your dashboard:
 ### Understanding Vercel's Auto-Deploy
 
 **How it works:**
+
 1. You push code to GitHub: `git push origin main`
 2. Vercel detects the change (via webhook)
 3. Vercel automatically deploys the new version
 4. Your live site updates in ~1-2 minutes
 
 **See it in action:**
+
 1. Make a change to your app
 2. Commit and push: `git push origin main`
 3. Go to Vercel dashboard → Deployments
 4. You'll see a new deployment starting!
 
 **Disable auto-deploy:**
+
 - Settings → Git → Disable "Automatic deployments from GitHub"
 
 ---
@@ -441,6 +462,7 @@ I created `deploy-vercel.ps1` for you. Just run:
 ```
 
 **What it does automatically:**
+
 1. ✅ Builds Flutter web (release mode)
 2. ✅ Stages build/web folder
 3. ✅ Commits changes
@@ -530,6 +552,7 @@ git push origin main
 **Root Cause:** Output Directory is wrong or build/web folder is missing
 
 **Solution 1: Check Output Directory**
+
 1. Vercel Dashboard → Your Project → Settings
 2. Build & Development Settings
 3. Output Directory must be: `build/web`
@@ -551,6 +574,7 @@ git push origin main
 **Root Cause:** Vercel is trying to run a build command, but Flutter isn't installed
 
 **Solution:**
+
 1. Vercel Dashboard → Settings → Build & Development Settings
 2. **Build Command:** Delete everything, leave EMPTY
 3. **Install Command:** Leave EMPTY
@@ -562,6 +586,7 @@ git push origin main
 **Root Cause:** Site isn't HTTPS, or permissions not granted
 
 **Solution:**
+
 - ✅ Vercel provides HTTPS automatically
 - ✅ Make sure you're using Safari on iPhone
 - ✅ When prompted, tap "Allow" for camera
@@ -587,6 +612,7 @@ git push origin main
 **Root Cause:** Browser cache
 
 **Solution:**
+
 - Hard refresh: `Ctrl + Shift + R` (Windows) or `Cmd + Shift + R` (Mac)
 - Or clear browser cache
 - Or open in incognito/private browsing mode
@@ -597,6 +623,7 @@ git push origin main
 
 **Q: How much does Vercel cost?**
 A: Free for personal projects! Includes:
+
 - Unlimited deployments
 - HTTPS
 - 100 GB bandwidth/month
@@ -604,6 +631,7 @@ A: Free for personal projects! Includes:
 
 **Q: Can I use a custom domain?**
 A: Yes! In Vercel:
+
 1. Settings → Domains
 2. Add your domain (e.g., mybarcodeapp.com)
 3. Update DNS at your domain registrar
@@ -611,22 +639,26 @@ A: Yes! In Vercel:
 
 **Q: How do I delete a deployment?**
 A: 
+
 1. Vercel Dashboard → Deployments
 2. Click "..." next to deployment → Delete
 
 **Q: How do I delete the whole project?**
 A:
+
 1. Settings → General → scroll to bottom
 2. "Delete Project" → Type project name → Delete
 
 **Q: Can I have multiple environments (staging/production)?**
 A: Yes!
+
 1. Create a new branch: `git checkout -b staging`
 2. Push: `git push origin staging`
 3. Vercel auto-creates a separate deployment for that branch
 
 **Q: Where can I see deployment logs?**
 A:
+
 1. Vercel Dashboard → Deployments
 2. Click any deployment
 3. See build logs, runtime logs, errors
@@ -668,6 +700,7 @@ git push origin main                # Upload to GitHub
 ### Vercel Deployment Checklist
 
 Before deploying:
+
 - [ ] Code pushed to GitHub
 - [ ] `build/web` folder exists in repo
 - [ ] Vercel project created
@@ -677,6 +710,7 @@ Before deploying:
 - [ ] Framework: Other
 
 After deploying:
+
 - [ ] Deployment shows "Ready"
 - [ ] Live URL loads without errors
 - [ ] Test "Scan Barcode" button
@@ -690,18 +724,21 @@ After deploying:
 ### You now know how to:
 
 **Git:**
+
 - ✅ Initialize and configure Git
 - ✅ Stage, commit, and push changes
 - ✅ Connect to GitHub
 - ✅ Manage branches and history
 
 **GitHub:**
+
 - ✅ Create repositories
 - ✅ Authenticate with tokens
 - ✅ View code online
 - ✅ Collaborate with others
 
 **Vercel:**
+
 - ✅ Create account and link GitHub
 - ✅ Import and configure projects
 - ✅ Deploy static sites
@@ -709,6 +746,7 @@ After deploying:
 - ✅ Troubleshoot common issues
 
 **Workflow:**
+
 - ✅ Make changes → Build → Commit → Push → Auto-deploy!
 
 ---
