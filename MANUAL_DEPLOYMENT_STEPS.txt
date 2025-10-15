@@ -1,0 +1,124 @@
+# STEP-BY-STEP MANUAL DEPLOYMENT TO GITHUB PAGES
+# Follow these instructions if you prefer manual setup
+
+## Prerequisites:
+## 1. Have a GitHub account
+## 2. Git installed on your computer
+
+# ============================================
+# STEP 1: Create Repository on GitHub
+# ============================================
+
+1. Go to: https://github.com/new
+2. Repository name: print-label-barcode-scanner
+3. Description: Flutter barcode scanner web app
+4. Set to: PUBLIC (required for free GitHub Pages)
+5. Do NOT check any boxes (no README, no .gitignore)
+6. Click "Create repository"
+
+# ============================================
+# STEP 2: Initialize Git (Run in PowerShell)
+# ============================================
+
+# Open PowerShell in your project folder and run:
+
+git init
+git add .
+git commit -m "Initial commit with barcode scanner"
+
+# ============================================
+# STEP 3: Connect to GitHub
+# ============================================
+
+# Replace YOUR_USERNAME with your actual GitHub username:
+
+git remote add origin https://github.com/YOUR_USERNAME/print-label-barcode-scanner.git
+git branch -M main
+git push -u origin main
+
+# You'll be prompted for GitHub credentials
+
+# ============================================
+# STEP 4: Create gh-pages Branch
+# ============================================
+
+# Create a new orphan branch for deployment:
+git checkout --orphan gh-pages
+
+# Remove all files from tracking:
+git rm -rf .
+
+# Copy ONLY the contents of build/web:
+Copy-Item -Path "build\web\*" -Destination "." -Recurse -Force
+
+# Create .nojekyll file (important for Flutter):
+New-Item -Path ".nojekyll" -ItemType File
+
+# Commit the deployment:
+git add .
+git commit -m "Deploy Flutter web app to GitHub Pages"
+
+# Push to gh-pages branch:
+git push origin gh-pages
+
+# Switch back to main branch:
+git checkout main
+
+# ============================================
+# STEP 5: Enable GitHub Pages
+# ============================================
+
+1. Go to: https://github.com/YOUR_USERNAME/print-label-barcode-scanner
+2. Click "Settings" tab (top right)
+3. Scroll down left sidebar → Click "Pages"
+4. Under "Source":
+   - Branch: Select "gh-pages"
+   - Folder: Select "/ (root)"
+5. Click "Save"
+6. Wait 1-2 minutes
+
+# ============================================
+# STEP 6: Access Your Site
+# ============================================
+
+Your site will be live at:
+https://YOUR_USERNAME.github.io/print-label-barcode-scanner/
+
+# ============================================
+# TROUBLESHOOTING
+# ============================================
+
+If you see a blank page:
+1. Check that index.html has: <base href="/print-label-barcode-scanner/">
+2. Make sure .nojekyll file exists in gh-pages branch
+3. Wait a few more minutes - GitHub Pages can take 5-10 minutes on first deploy
+
+If camera doesn't work:
+- GitHub Pages automatically provides HTTPS ✅
+- Make sure you grant camera permissions in browser
+- Test specifically on iPhone Safari
+
+# ============================================
+# UPDATING YOUR SITE
+# ============================================
+
+When you make changes:
+
+1. Build new version:
+   flutter build web --release
+
+2. Switch to gh-pages branch:
+   git checkout gh-pages
+
+3. Remove old files and copy new ones:
+   git rm -rf . 
+   Copy-Item -Path "build\web\*" -Destination "." -Recurse -Force
+   New-Item -Path ".nojekyll" -ItemType File -Force
+
+4. Commit and push:
+   git add .
+   git commit -m "Update deployment"
+   git push origin gh-pages
+
+5. Switch back to main:
+   git checkout main
