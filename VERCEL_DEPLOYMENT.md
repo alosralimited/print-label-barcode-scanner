@@ -19,6 +19,7 @@ git push origin main
 ```
 
 **What this does:**
+
 - `git add .` - Stages all changed files (including build/web folder)
 - `git commit` - Saves changes locally with a message
 - `git push` - Uploads changes to GitHub
@@ -31,9 +32,10 @@ git push origin main
 
 ### Step 2: Go to Vercel Import Page
 
-Open this link: **https://vercel.com/new**
+Open this link: **<https://vercel.com/new>**
 
 **What you'll see:**
+
 - A page titled "Import Git Repository" or "Let's build something new"
 - Options to connect with GitHub, GitLab, or Bitbucket
 
@@ -45,6 +47,7 @@ Open this link: **https://vercel.com/new**
 4. If asked, enter your GitHub password
 
 **What this does:**
+
 - Gives Vercel permission to read your GitHub repositories
 - You only need to do this once
 
@@ -55,6 +58,7 @@ Open this link: **https://vercel.com/new**
 3. Click **"Import"** next to it
 
 **If you don't see your repository:**
+
 - Click "Adjust GitHub App Permissions"
 - Select "All repositories" or just your repository
 - Click "Install"
@@ -64,37 +68,45 @@ Open this link: **https://vercel.com/new**
 You'll see a configuration page with these fields:
 
 **Project Name:**
+
 - Leave as default or change it (e.g., "barcode-scanner")
 
 **Framework Preset:**
+
 - Click the dropdown
 - Select **"Other"** (Flutter is not in the list, so choose "Other")
 
 **Root Directory:**
+
 - Leave as **"./"** (default)
 
 **Build Command:**
-- Enter: `flutter build web --release`
-- **What this does:** Tells Vercel to build your Flutter app for the web
+
+- Leave this EMPTY (recommended)
+- Why: Vercel runners don't have Flutter by default. Leaving it empty tells Vercel to serve the files you already built and committed.
+- Only if you really want Vercel to build, set: `flutter build web --release` (requires a custom setup). Exit code 127 or a message like `lutter build web --release` indicates a missing/typo build command.
 
 **Output Directory:**
+
 - Enter: `build/web`
 - **What this does:** Tells Vercel where to find your built files
 - **IMPORTANT:** This is the key setting! Make sure it says `build/web`
 
 **Install Command:**
-- Leave empty or enter: `flutter pub get`
 
-### Step 6: Deploy!
+- Leave this EMPTY
+
+### Step 6: Deploy
 
 1. Click the big blue **"Deploy"** button
 2. Vercel will start building your app
 3. You'll see a progress screen with logs
 
 **What's happening:**
-- Vercel is downloading your code from GitHub
-- Running `flutter build web --release`
-- Uploading the `build/web` folder to Vercel servers
+
+- Vercel downloads your code from GitHub
+- Since Build Command is empty, it skips building and serves `build/web` as static files
+- It uploads the `build/web` folder to Vercel's CDN
 
 **This takes 2-5 minutes.**
 
@@ -105,6 +117,7 @@ When deployment finishes, you'll see:
 **🎉 Congratulations! Your project has been deployed!**
 
 You'll see:
+
 - A preview image of your site
 - A URL like: `https://print-label-barcode-scanner.vercel.app`
 - Or: `https://your-project-name-xxxxx.vercel.app`
@@ -123,25 +136,36 @@ You'll see:
 
 ## 📋 TROUBLESHOOTING
 
-### Problem: "Build failed" on Vercel
+### Problem: "Build failed" or Exit code 127 on Vercel
 
-**Solution 1:** Deploy the pre-built files instead
-1. In Vercel settings, change:
-   - Build Command: Leave **empty** (delete the command)
-   - Output Directory: `build/web`
-2. Click "Redeploy"
+This happens when Vercel tries to run a build command but Flutter isn't installed or the command is mistyped (e.g., `lutter build web --release`).
 
-**Why this works:**
-- Your `build/web` folder is already built and pushed to GitHub
-- Vercel doesn't need to rebuild it, just serve the files
+**Fix (no server build):**
+1. Go to Vercel → Project → Settings → Build & Development Settings
+2. Set:
+    - Build Command: EMPTY
+    - Install Command: EMPTY
+    - Output Directory: `build/web`
+3. Save → Redeploy
 
-**Solution 2:** Check Flutter version
-- Vercel might not have Flutter installed
-- Use Solution 1 above (deploy pre-built files)
+Optional: Add `vercel.json` (already added) so Vercel serves from `build/web` automatically:
+
+```json
+{
+   "version": 2,
+   "builds": [
+      { "src": "build/web/**", "use": "@vercel/static" }
+   ],
+   "routes": [
+      { "src": "/(.*)", "dest": "/build/web/$1" }
+   ]
+}
+```
 
 ### Problem: Blank page or "404 Not Found"
 
 **Check:**
+
 1. Output Directory is set to `build/web` (not just `build`)
 2. Your `build/web/index.html` exists in GitHub
 3. Redeploy after changing settings
@@ -149,11 +173,13 @@ You'll see:
 ### Problem: Camera doesn't work
 
 **On iPhone:**
+
 - iOS requires HTTPS (Vercel provides this automatically ✅)
 - Make sure you clicked "Allow" when prompted for camera access
 - Try Safari browser (works best on iOS)
 
 **On Computer:**
+
 - Some browsers block camera on localhost
 - Vercel's HTTPS URL should work fine
 
@@ -175,11 +201,13 @@ You'll see:
 When you make changes to your Flutter app:
 
 1. **Build the updated app:**
+
    ```powershell
    flutter build web --release
    ```
 
 2. **Push to GitHub:**
+
    ```powershell
    git add .
    git commit -m "Update app"
@@ -191,6 +219,7 @@ When you make changes to your Flutter app:
    - Wait 2 minutes, your site is updated
 
 **OR manually trigger a redeploy:**
+
 - Go to your Vercel dashboard
 - Click your project
 - Click "Redeploy"
@@ -200,6 +229,7 @@ When you make changes to your Flutter app:
 ## 📞 NEED HELP?
 
 If deployment still doesn't work:
+
 1. Share the Vercel deployment logs (copy/paste the error)
 2. Share your live URL
 3. Describe what you see (blank page, error message, etc.)
@@ -207,6 +237,7 @@ If deployment still doesn't work:
 ---
 
 **Good luck! 🚀**
+
 - ✅ Automatic HTTPS
 - ✅ Better performance
 - ✅ Simpler setup
