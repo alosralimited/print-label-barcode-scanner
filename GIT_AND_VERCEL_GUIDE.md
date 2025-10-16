@@ -24,7 +24,7 @@ git --version
 
 **Expected output:** `git version 2.xx.x`
 
-**If not installed:**
+#### If not installed:
 
 1. Download from: https://git-scm.com/download/win
 2. Run the installer
@@ -42,13 +42,13 @@ git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
 ```
 
-**Example:**
+#### Example:
 ```powershell
 git config --global user.name "John Doe"
 git config --global user.email "john@example.com"
 ```
 
-**Verify your settings:**
+#### Verify your settings:
 ```powershell
 git config --global --list
 ```
@@ -63,7 +63,7 @@ See what files have changed:
 git status
 ```
 
-**What it shows:**
+#### What it shows:
 
 - Red files = changed but not staged
 - Green files = staged and ready to commit
@@ -78,7 +78,7 @@ git add .
 - The `.` means "add all changed files"
 - Or add specific file: `git add filename.txt`
 
-**Force add ignored files:**
+##### Force add ignored files:
 ```powershell
 git add -f build/web
 ```
@@ -90,7 +90,7 @@ Save your staged changes with a message:
 git commit -m "Your message describing what changed"
 ```
 
-**Good commit messages:**
+##### Good commit messages:
 
 - ✅ `git commit -m "Add camera permission for Android"`
 - ✅ `git commit -m "Fix barcode scanner on iOS"`
@@ -322,18 +322,18 @@ You'll see a configuration page. **This is the most important step!**
 
 #### Build Settings - ⚠️ CRITICAL SETTINGS
 
-**Build Command:**
+##### Build Command:
 
 - **LEAVE THIS EMPTY** (delete any text)
 - Why: We're deploying pre-built files from `build/web`. Vercel doesn't have Flutter installed, so it can't build.
 
-**Output Directory:**
+##### Output Directory:
 
 - Enter exactly: **`build/web`**
 - This is where your built website files are
 - ⚠️ If this is wrong, you'll get a 404 error!
 
-**Install Command:**
+##### Install Command:
 
 - **LEAVE THIS EMPTY**
 - Why: No need to install dependencies when serving static files
@@ -380,19 +380,19 @@ After deployment:
 
 After deployment, explore your dashboard:
 
-**Deployments Tab:**
+##### Deployments Tab:
 
 - See all past deployments
 - Each push to GitHub creates a new deployment
 - Click any deployment to see logs
 
-**Settings Tab:**
+##### Settings Tab:
 
 - Change domain name
 - Update build settings
 - Delete project
 
-**Domains Tab:**
+##### Domains Tab:
 
 - Your free `.vercel.app` domain
 - Add custom domains (e.g., `mybarcodeapp.com`)
@@ -401,21 +401,21 @@ After deployment, explore your dashboard:
 
 ### Understanding Vercel's Auto-Deploy
 
-**How it works:**
+#### How it works:
 
 1. You push code to GitHub: `git push origin main`
 2. Vercel detects the change (via webhook)
 3. Vercel automatically deploys the new version
 4. Your live site updates in ~1-2 minutes
 
-**See it in action:**
+#### See it in action:
 
 1. Make a change to your app
 2. Commit and push: `git push origin main`
 3. Go to Vercel dashboard → Deployments
 4. You'll see a new deployment starting!
 
-**Disable auto-deploy:**
+#### Disable auto-deploy:
 
 - Settings → Git → Disable "Automatic deployments from GitHub"
 
@@ -456,12 +456,12 @@ I created `deploy-vercel.ps1` for you. Just run:
 .\deploy-vercel.ps1
 ```
 
-**Or with a custom message:**
+##### Or with a custom message:
 ```powershell
 .\deploy-vercel.ps1 -Message "Fixed camera on iPhone"
 ```
 
-**What it does automatically:**
+##### What it does automatically:
 
 1. ✅ Builds Flutter web (release mode)
 2. ✅ Stages build/web folder
@@ -498,7 +498,7 @@ After pushing:
 
 #### Problem: "Permission denied" when pushing
 
-**Solution:**
+##### Solution:
 ```powershell
 # Use personal access token instead of password
 # Generate one: https://github.com/settings/tokens
@@ -507,7 +507,7 @@ After pushing:
 
 #### Problem: "Repository not found"
 
-**Solution:**
+##### Solution:
 ```powershell
 # Check remote URL
 git remote -v
@@ -519,7 +519,7 @@ git remote set-url origin https://github.com/alosralimited/print-label-barcode-s
 
 #### Problem: Merge conflicts
 
-**Solution:**
+##### Solution:
 ```powershell
 # See conflicted files
 git status
@@ -533,7 +533,7 @@ git push origin main
 
 #### Problem: "Your branch is behind"
 
-**Solution:**
+##### Solution:
 ```powershell
 # Get latest changes from GitHub
 git pull origin main
@@ -551,14 +551,14 @@ git push origin main
 
 **Root Cause:** Output Directory is wrong or build/web folder is missing
 
-**Solution 1: Check Output Directory**
+##### Solution 1: Check Output Directory
 
 1. Vercel Dashboard → Your Project → Settings
 2. Build & Development Settings
 3. Output Directory must be: `build/web`
 4. Save → Deployments → Redeploy
 
-**Solution 2: Ensure build/web is in GitHub**
+##### Solution 2: Ensure build/web is in GitHub
 ```powershell
 # Check if build/web is in your repo
 git ls-files build/web
@@ -573,7 +573,7 @@ git push origin main
 
 **Root Cause:** Vercel is trying to run a build command, but Flutter isn't installed
 
-**Solution:**
+##### Solution:
 
 1. Vercel Dashboard → Settings → Build & Development Settings
 2. **Build Command:** Delete everything, leave EMPTY
@@ -585,7 +585,7 @@ git push origin main
 
 **Root Cause:** Site isn't HTTPS, or permissions not granted
 
-**Solution:**
+##### Solution:
 
 - ✅ Vercel provides HTTPS automatically
 - ✅ Make sure you're using Safari on iPhone
@@ -596,7 +596,7 @@ git push origin main
 
 **Root Cause:** JavaScript errors or base href issues
 
-**Solution:**
+##### Solution:
 ```powershell
 # Rebuild without base href
 flutter build web --release
@@ -611,7 +611,7 @@ git push origin main
 
 **Root Cause:** Browser cache
 
-**Solution:**
+##### Solution:
 
 - Hard refresh: `Ctrl + Shift + R` (Windows) or `Cmd + Shift + R` (Mac)
 - Or clear browser cache
@@ -621,7 +621,8 @@ git push origin main
 
 ### Common Questions
 
-**Q: How much does Vercel cost?**
+#### Q: How much does Vercel cost?
+
 A: Free for personal projects! Includes:
 
 - Unlimited deployments
@@ -629,7 +630,8 @@ A: Free for personal projects! Includes:
 - 100 GB bandwidth/month
 - Custom domains
 
-**Q: Can I use a custom domain?**
+#### Q: Can I use a custom domain?
+
 A: Yes! In Vercel:
 
 1. Settings → Domains
@@ -637,26 +639,30 @@ A: Yes! In Vercel:
 3. Update DNS at your domain registrar
 4. Done!
 
-**Q: How do I delete a deployment?**
+#### Q: How do I delete a deployment?
+
 A: 
 
 1. Vercel Dashboard → Deployments
 2. Click "..." next to deployment → Delete
 
-**Q: How do I delete the whole project?**
+#### Q: How do I delete the whole project?
+
 A:
 
 1. Settings → General → scroll to bottom
 2. "Delete Project" → Type project name → Delete
 
-**Q: Can I have multiple environments (staging/production)?**
+#### Q: Can I have multiple environments (staging/production)?
+
 A: Yes!
 
 1. Create a new branch: `git checkout -b staging`
 2. Push: `git push origin staging`
 3. Vercel auto-creates a separate deployment for that branch
 
-**Q: Where can I see deployment logs?**
+#### Q: Where can I see deployment logs?
+
 A:
 
 1. Vercel Dashboard → Deployments
@@ -723,21 +729,21 @@ After deploying:
 
 ### You now know how to:
 
-**Git:**
+#### Git:
 
 - ✅ Initialize and configure Git
 - ✅ Stage, commit, and push changes
 - ✅ Connect to GitHub
 - ✅ Manage branches and history
 
-**GitHub:**
+#### GitHub:
 
 - ✅ Create repositories
 - ✅ Authenticate with tokens
 - ✅ View code online
 - ✅ Collaborate with others
 
-**Vercel:**
+#### Vercel:
 
 - ✅ Create account and link GitHub
 - ✅ Import and configure projects
@@ -745,7 +751,7 @@ After deploying:
 - ✅ Use auto-deploy on push
 - ✅ Troubleshoot common issues
 
-**Workflow:**
+#### Workflow:
 
 - ✅ Make changes → Build → Commit → Push → Auto-deploy!
 
