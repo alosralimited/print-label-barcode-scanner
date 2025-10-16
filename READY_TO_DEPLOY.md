@@ -63,7 +63,9 @@ Expected a scalar value, a sequence, or a mapping
    - Output Directory: `build/web`
    - Build Command: (leave empty)
 5. Click "Deploy"
-6. Done! Get your URL: `https://print-label-barcode-scanner.vercel.app`
+6. Done! You'll receive a unique URL like: `https://your-project-name-xxxxx.vercel.app`
+   - Example: `https://print-label-barcode-scanner.vercel.app`
+   - You can customize this URL later in Vercel settings
 
 **📖 Full Guide:** [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md)
 
@@ -77,13 +79,14 @@ Expected a scalar value, a sequence, or a mapping
 **How it works:**
 - Push any change to the `main` branch
 - GitHub Actions automatically builds and deploys
-- Your site appears at: `https://alosralimited.github.io/print-label-barcode-scanner/`
+- Your site will appear at: `https://<username>.github.io/<repository-name>/`
+  - For this repository: `https://alosralimited.github.io/print-label-barcode-scanner/`
 
 **To enable:**
 1. Go to your repository on GitHub
 2. Settings → Pages
 3. Source: Deploy from a branch
-4. Branch: `gh-pages` (will be created automatically)
+4. Branch: `gh-pages` (will be created automatically by the workflow)
 5. Save
 
 **Next push to main will trigger deployment!**
@@ -122,14 +125,16 @@ vercel.json                       ✓ Vercel configuration
 
 ### Documentation:
 ```
-STATUS_UPDATE.md          ✓ Deployment status
-README.md                 ✓ Project overview
-VERCEL_DEPLOYMENT.md      ✓ Vercel guide
-GIT_AND_VERCEL_GUIDE.md   ✓ Complete Git & Vercel guide
-DEPLOYMENT_GUIDE.md       ✓ Multi-platform guide
-IPHONE_USAGE_GUIDE.md     ✓ iPhone instructions
-README_GUIDES.md          ✓ Documentation index
+STATUS_UPDATE.md          ✓ Deployment status (created today)
+README.md                 ✓ Project overview (updated today)
+VERCEL_DEPLOYMENT.md      ✓ Vercel guide (pre-existing)
+GIT_AND_VERCEL_GUIDE.md   ✓ Complete Git & Vercel guide (pre-existing)
+DEPLOYMENT_GUIDE.md       ✓ Multi-platform guide (pre-existing)
+IPHONE_USAGE_GUIDE.md     ✓ iPhone instructions (pre-existing)
+README_GUIDES.md          ✓ Documentation index (pre-existing)
 ```
+
+**Note:** All pre-existing guides were created recently and are current.
 
 ---
 
