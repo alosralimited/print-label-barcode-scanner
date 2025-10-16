@@ -7,9 +7,11 @@ Welcome to the Print Label Barcode Scanner project! This document helps you navi
 ## 📖 Available Guides
 
 ### 1. **Git & Vercel Deployment Guide** 📘
+
 **File:** `GIT_AND_VERCEL_GUIDE.md`
 
 **What's inside:**
+
 - Complete Git setup and basics
 - GitHub repository creation
 - Vercel deployment step-by-step
@@ -17,6 +19,7 @@ Welcome to the Print Label Barcode Scanner project! This document helps you navi
 - Troubleshooting Git and Vercel issues
 
 **When to use:**
+
 - First time setting up Git
 - Creating GitHub repository
 - Deploying to Vercel
@@ -28,9 +31,11 @@ Welcome to the Print Label Barcode Scanner project! This document helps you navi
 ---
 
 ### 2. **iPhone Usage Guide** 📱
+
 **File:** `IPHONE_USAGE_GUIDE.md`
 
 **What's inside:**
+
 - How to use the app on iPhone (web version)
 - Adding app to home screen
 - Building native iOS app with Xcode
@@ -38,6 +43,7 @@ Welcome to the Print Label Barcode Scanner project! This document helps you navi
 - Comparison: Web vs Native app
 
 **When to use:**
+
 - You want to test on iPhone
 - Camera not working on mobile
 - Adding app to home screen
@@ -48,9 +54,11 @@ Welcome to the Print Label Barcode Scanner project! This document helps you navi
 ---
 
 ### 3. **Vercel Deployment Guide** 🚀
+
 **File:** `VERCEL_DEPLOYMENT.md`
 
 **What's inside:**
+
 - Vercel-specific deployment instructions
 - Build settings configuration
 - Troubleshooting 404 and build errors
@@ -58,6 +66,7 @@ Welcome to the Print Label Barcode Scanner project! This document helps you navi
 - Benefits of Vercel
 
 **When to use:**
+
 - Quick Vercel deployment reference
 - Fixing specific Vercel errors
 - Understanding Vercel settings
@@ -126,27 +135,34 @@ Welcome to the Print Label Barcode Scanner project! This document helps you navi
 ## 🔧 Common Tasks
 
 ### Deploy the app to Vercel
+
 → **Guide:** `GIT_AND_VERCEL_GUIDE.md` Part 3  
 → **Or:** `VERCEL_DEPLOYMENT.md`
 
 ### Update the app after changes
+
 → **Guide:** `GIT_AND_VERCEL_GUIDE.md` Part 4  
 → **Or use script:** `deploy-vercel.ps1`
 
 ### Fix Vercel 404 error
+
 → **Guide:** `VERCEL_DEPLOYMENT.md` → Troubleshooting  
 → **Or:** `GIT_AND_VERCEL_GUIDE.md` Part 5
 
 ### Test on iPhone
+
 → **Guide:** `IPHONE_USAGE_GUIDE.md`
 
 ### Add to iPhone home screen
+
 → **Guide:** `IPHONE_USAGE_GUIDE.md` → "Add to Home Screen"
 
 ### Commit and push code changes
+
 → **Guide:** `GIT_AND_VERCEL_GUIDE.md` Part 1 & 4
 
 ### Fix camera permission on iPhone
+
 → **Guide:** `IPHONE_USAGE_GUIDE.md` → Troubleshooting
 
 ---
@@ -154,9 +170,11 @@ Welcome to the Print Label Barcode Scanner project! This document helps you navi
 ## 📜 Helper Scripts
 
 ### `deploy-vercel.ps1`
+
 **Purpose:** Automate build and deployment
 
 **Usage:**
+
 ```powershell
 # Default commit message
 .\deploy-vercel.ps1
@@ -166,6 +184,7 @@ Welcome to the Print Label Barcode Scanner project! This document helps you navi
 ```
 
 **What it does:**
+
 1. Builds Flutter web app
 2. Stages `build/web` folder
 3. Commits changes
@@ -175,9 +194,11 @@ Welcome to the Print Label Barcode Scanner project! This document helps you navi
 ---
 
 ### `update-deployment.ps1`
+
 **Purpose:** Deploy to GitHub Pages (alternative to Vercel)
 
 **Usage:**
+
 ```powershell
 .\update-deployment.ps1
 ```
@@ -212,28 +233,37 @@ print_label_barcode_scanner/
 ## ❓ FAQ
 
 ### Q: Which guide should I read first?
+
 **A:** Depends on your experience:
+
 - Never used Git/Vercel? → `GIT_AND_VERCEL_GUIDE.md`
 - Just need Vercel? → `VERCEL_DEPLOYMENT.md`
 - Want to use on iPhone? → `IPHONE_USAGE_GUIDE.md`
 
 ### Q: Do I need to read all guides?
+
 **A:** No! Pick the one that matches your current task:
+
 - Deploying? → Git & Vercel guide
 - Testing on iPhone? → iPhone guide
 - Fixing errors? → Check troubleshooting sections
 
 ### Q: Can I use these guides for other Flutter projects?
+
 **A:** Yes! The Git and Vercel sections apply to any Flutter web project.
 
 ### Q: Where do I get my Vercel URL?
-**A:** 
-1. Go to https://vercel.com/dashboard
+
+**A:**
+
+1. Go to <https://vercel.com/dashboard>
 2. Click your project
 3. URL is shown at the top (e.g., `https://your-project.vercel.app`)
 
 ### Q: How do I update my deployed app?
+
 **A:**
+
 ```powershell
 # Build
 flutter build web --release
@@ -248,10 +278,13 @@ git push origin main
 ```
 
 ### Q: Camera doesn't work on iPhone - what to do?
+
 **A:** See `IPHONE_USAGE_GUIDE.md` → Troubleshooting → "Camera Permission Not Showing"
 
 ### Q: Can I deploy to something other than Vercel?
+
 **A:** Yes! Options:
+
 - GitHub Pages (use `update-deployment.ps1`)
 - Firebase Hosting
 - Netlify
@@ -264,6 +297,7 @@ But Vercel is recommended for this project (easiest, no base href issues).
 ## 🆘 Getting Help
 
 ### Issue: Deployment not working
+
 1. **Check:** `GIT_AND_VERCEL_GUIDE.md` Part 5 (Troubleshooting)
 2. **Check:** `VERCEL_DEPLOYMENT.md` → Troubleshooting
 3. **Common fixes:**
@@ -272,6 +306,7 @@ But Vercel is recommended for this project (easiest, no base href issues).
    - `build/web` exists in GitHub
 
 ### Issue: Camera not working on iPhone
+
 1. **Check:** `IPHONE_USAGE_GUIDE.md` → Troubleshooting
 2. **Common fixes:**
    - Use Safari (not Chrome)
@@ -279,6 +314,7 @@ But Vercel is recommended for this project (easiest, no base href issues).
    - Site must be HTTPS (Vercel provides this)
 
 ### Issue: Git errors
+
 1. **Check:** `GIT_AND_VERCEL_GUIDE.md` Part 5
 2. **Common fixes:**
    - Use personal access token for authentication
@@ -290,17 +326,20 @@ But Vercel is recommended for this project (easiest, no base href issues).
 ## 🎓 Learning Resources
 
 ### Git & GitHub
-- Official Git Docs: https://git-scm.com/doc
-- GitHub Guides: https://guides.github.com
-- Interactive Tutorial: https://learngitbranching.js.org
+
+- Official Git Docs: <https://git-scm.com/doc>
+- GitHub Guides: <https://guides.github.com>
+- Interactive Tutorial: <https://learngitbranching.js.org>
 
 ### Vercel
-- Official Docs: https://vercel.com/docs
-- Deployment Guide: https://vercel.com/docs/deployments/overview
+
+- Official Docs: <https://vercel.com/docs>
+- Deployment Guide: <https://vercel.com/docs/deployments/overview>
 
 ### Flutter
-- Flutter Web: https://flutter.dev/web
-- Barcode Scanner Package: https://pub.dev/packages/ai_barcode_scanner
+
+- Flutter Web: <https://flutter.dev/web>
+- Barcode Scanner Package: <https://pub.dev/packages/ai_barcode_scanner>
 
 ---
 
@@ -314,7 +353,7 @@ But Vercel is recommended for this project (easiest, no base href issues).
 
 ---
 
-## 🚀 You're Ready!
+## 🚀 You're Ready
 
 Pick the guide that matches your needs and get started. All guides are beginner-friendly with step-by-step instructions.
 
