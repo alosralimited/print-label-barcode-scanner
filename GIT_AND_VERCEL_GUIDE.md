@@ -2,22 +2,24 @@
 
 ## Table of Contents
 
-1. [Git Setup & Basics](#git-setup--basics)
+1. [Git Setup & Basics](#part-1-git-setup--basics)
 2. [GitHub Setup](#github-setup)
-3. [Vercel Setup & Deployment](#vercel-setup--deployment)
-4. [Updating Your App](#updating-your-app)
-5. [Troubleshooting](#troubleshooting)
+3. [Vercel Setup & Deployment](#part-3-vercel-setup--deployment)
+4. [Updating Your App](#part-4-updating-your-app)
+5. [Troubleshooting](#part-5-troubleshooting)
 
 ---
 
 ## 📚 Part 1: Git Setup & Basics
 
 ### What is Git?
+
 Git is a version control system that tracks changes to your code. Think of it like "Save Points" in a video game - you can always go back to previous versions.
 
 ### Check if Git is Installed
 
 Open PowerShell and run:
+
 ```powershell
 git --version
 ```
@@ -26,7 +28,7 @@ git --version
 
 **If not installed:**
 
-1. Download from: https://git-scm.com/download/win
+1. Download from: <https://git-scm.com/download/win>
 2. Run the installer
 3. Use default settings
 4. Restart PowerShell
@@ -43,12 +45,14 @@ git config --global user.email "your.email@example.com"
 ```
 
 **Example:**
+
 ```powershell
 git config --global user.name "John Doe"
 git config --global user.email "john@example.com"
 ```
 
 **Verify your settings:**
+
 ```powershell
 git config --global --list
 ```
@@ -58,7 +62,9 @@ git config --global --list
 ### Basic Git Commands Explained
 
 #### 1. Check Status
+
 See what files have changed:
+
 ```powershell
 git status
 ```
@@ -70,7 +76,9 @@ git status
 - Untracked files = new files Git doesn't know about
 
 #### 2. Stage Files (Prepare to Save)
+
 Add files to be committed:
+
 ```powershell
 git add .
 ```
@@ -79,13 +87,17 @@ git add .
 - Or add specific file: `git add filename.txt`
 
 **Force add ignored files:**
+
 ```powershell
 git add -f build/web
 ```
+
 (Useful when you need to commit files that are in `.gitignore`)
 
 #### 3. Commit (Save Changes)
+
 Save your staged changes with a message:
+
 ```powershell
 git commit -m "Your message describing what changed"
 ```
@@ -99,7 +111,9 @@ git commit -m "Your message describing what changed"
 - ❌ `git commit -m "asdf"` (meaningless)
 
 #### 4. Push (Upload to GitHub)
+
 Send your commits to GitHub:
+
 ```powershell
 git push origin main
 ```
@@ -108,13 +122,17 @@ git push origin main
 - `main` = the branch name
 
 #### 5. Pull (Download from GitHub)
+
 Get latest changes from GitHub:
+
 ```powershell
 git pull origin main
 ```
 
 #### 6. View History
+
 See past commits:
+
 ```powershell
 git log --oneline
 ```
@@ -126,6 +144,7 @@ Press `q` to exit the log view.
 ### Common Git Workflows
 
 #### Workflow 1: Save and Upload Your Changes
+
 ```powershell
 # 1. See what changed
 git status
@@ -141,6 +160,7 @@ git push origin main
 ```
 
 #### Workflow 2: Undo Uncommitted Changes
+
 ```powershell
 # Undo changes to a specific file
 git restore filename.txt
@@ -150,6 +170,7 @@ git restore .
 ```
 
 #### Workflow 3: Temporarily Save Work (Stash)
+
 ```powershell
 # Save current work without committing
 git stash
@@ -162,14 +183,15 @@ git stash pop
 
 ---
 
-## 🌐 Part 2: GitHub Setup
+## 🌐 Part 2: GitHub Setup {#github-setup}
 
 ### What is GitHub?
+
 GitHub is a website that hosts Git repositories online. It's like Google Drive for code.
 
 ### Create a GitHub Account
 
-1. Go to https://github.com
+1. Go to <https://github.com>
 2. Click **"Sign up"**
 3. Enter your email, password, username
 4. Verify your email
@@ -181,11 +203,11 @@ GitHub is a website that hosts Git repositories online. It's like Google Drive f
 
 #### Method 1: Via GitHub Website
 
-1. **Go to GitHub**: https://github.com/new
+1. **Go to GitHub**: <https://github.com/new>
 2. **Fill in details**:
    - **Repository name**: `print-label-barcode-scanner`
    - **Description**: (optional) "Flutter barcode scanner app"
-   - **Visibility**: 
+   - **Visibility**:
      - ✅ **Public** (free, anyone can see)
      - Or **Private** (only you can see)
    - **DO NOT check** "Add a README file"
@@ -227,7 +249,7 @@ When you push for the first time, GitHub will ask for credentials:
 #### Option 1: Personal Access Token (Recommended)
 
 1. **Generate Token**:
-   - Go to: https://github.com/settings/tokens
+   - Go to: <https://github.com/settings/tokens>
    - Click **"Generate new token (classic)"**
    - Name it: "Windows PC"
    - Select scopes: Check **`repo`** (full control of private repositories)
@@ -239,13 +261,14 @@ When you push for the first time, GitHub will ask for credentials:
    - When it asks for password: **paste your token** (not your GitHub password)
 
 3. **Save Credentials** (so you don't type it every time):
+
    ```powershell
    git config --global credential.helper manager
    ```
 
 #### Option 2: GitHub Desktop (Easiest)
 
-1. Download GitHub Desktop: https://desktop.github.com
+1. Download GitHub Desktop: <https://desktop.github.com>
 2. Install and sign in with your GitHub account
 3. Add your local repository
 4. Push/pull with a button click (no command line needed)
@@ -265,6 +288,7 @@ After pushing:
 ## ☁️ Part 3: Vercel Setup & Deployment
 
 ### What is Vercel?
+
 Vercel is a hosting platform that deploys your web app to the internet. It's free for personal projects and provides:
 
 - ✅ Fast global CDN
@@ -276,7 +300,7 @@ Vercel is a hosting platform that deploys your web app to the internet. It's fre
 
 ### Step 1: Create Vercel Account
 
-1. **Go to Vercel**: https://vercel.com/signup
+1. **Go to Vercel**: <https://vercel.com/signup>
 2. **Click "Continue with GitHub"** (recommended)
 3. **Authorize Vercel** to access your GitHub account
 4. **Complete signup**
@@ -287,7 +311,7 @@ Vercel is a hosting platform that deploys your web app to the internet. It's fre
 
 ### Step 2: Import Your Repository to Vercel
 
-1. **Go to**: https://vercel.com/new
+1. **Go to**: <https://vercel.com/new>
 2. **You'll see "Import Git Repository"**
 3. **Find your repo**:
    - If you see `alosralimited/print-label-barcode-scanner`, click **"Import"**
@@ -295,7 +319,7 @@ Vercel is a hosting platform that deploys your web app to the internet. It's fre
      - Click **"Adjust GitHub App Permissions"**
      - Select **"All repositories"** or select `print-label-barcode-scanner`
      - Click **"Install & Authorize"**
-     - Go back to https://vercel.com/new
+     - Go back to <https://vercel.com/new>
      - Now click **"Import"** next to your repo
 
 ---
@@ -344,7 +368,7 @@ You'll see a configuration page. **This is the most important step!**
 
 ---
 
-### Step 4: Deploy!
+### Step 4: Deploy
 
 1. **Click the big blue "Deploy" button**
 2. **Wait 1-2 minutes** while Vercel:
@@ -457,6 +481,7 @@ I created `deploy-vercel.ps1` for you. Just run:
 ```
 
 **Or with a custom message:**
+
 ```powershell
 .\deploy-vercel.ps1 -Message "Fixed camera on iPhone"
 ```
@@ -481,7 +506,7 @@ After pushing:
    - You should see your latest commit
 
 2. **Check Vercel**:
-   - Go to: https://vercel.com/dashboard
+   - Go to: <https://vercel.com/dashboard>
    - Click your project
    - Deployments tab should show "Building..." then "Ready"
 
@@ -499,6 +524,7 @@ After pushing:
 #### Problem: "Permission denied" when pushing
 
 **Solution:**
+
 ```powershell
 # Use personal access token instead of password
 # Generate one: https://github.com/settings/tokens
@@ -508,6 +534,7 @@ After pushing:
 #### Problem: "Repository not found"
 
 **Solution:**
+
 ```powershell
 # Check remote URL
 git remote -v
@@ -520,6 +547,7 @@ git remote set-url origin https://github.com/alosralimited/print-label-barcode-s
 #### Problem: Merge conflicts
 
 **Solution:**
+
 ```powershell
 # See conflicted files
 git status
@@ -534,6 +562,7 @@ git push origin main
 #### Problem: "Your branch is behind"
 
 **Solution:**
+
 ```powershell
 # Get latest changes from GitHub
 git pull origin main
@@ -559,6 +588,7 @@ git push origin main
 4. Save → Deployments → Redeploy
 
 **Solution 2: Ensure build/web is in GitHub**
+
 ```powershell
 # Check if build/web is in your repo
 git ls-files build/web
@@ -597,6 +627,7 @@ git push origin main
 **Root Cause:** JavaScript errors or base href issues
 
 **Solution:**
+
 ```powershell
 # Rebuild without base href
 flutter build web --release
@@ -638,7 +669,7 @@ A: Yes! In Vercel:
 4. Done!
 
 **Q: How do I delete a deployment?**
-A: 
+A:
 
 1. Vercel Dashboard → Deployments
 2. Click "..." next to deployment → Delete
@@ -721,7 +752,7 @@ After deploying:
 
 ## 🎯 Summary
 
-### You now know how to:
+### You now know how to
 
 **Git:**
 
@@ -753,11 +784,11 @@ After deploying:
 
 ## 📚 Resources
 
-- **Git Documentation**: https://git-scm.com/doc
-- **GitHub Guides**: https://guides.github.com
-- **Vercel Docs**: https://vercel.com/docs
-- **Flutter Web**: https://flutter.dev/web
-- **Your Repository**: https://github.com/alosralimited/print-label-barcode-scanner
+- **Git Documentation**: <https://git-scm.com/doc>
+- **GitHub Guides**: <https://guides.github.com>
+- **Vercel Docs**: <https://vercel.com/docs>
+- **Flutter Web**: <https://flutter.dev/web>
+- **Your Repository**: <https://github.com/alosralimited/print-label-barcode-scanner>
 - **Your Live Site**: Check Vercel dashboard for URL
 
 ---
