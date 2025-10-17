@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "dart-code.flutter",
+        "dart-code.dart-code"
+    ],
+    "unwantedRecommendations": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter"
+    ]
+}

@@ -22,6 +22,47 @@
 
 ## 📦 GitHub Pages (Free Forever)
 
+### ⭐ RECOMMENDED: Automated Deployment with GitHub Actions
+
+The repository includes a GitHub Actions workflow for automatic deployment!
+
+**Setup Steps:**
+1. Enable GitHub Pages in your repository settings:
+   - Go to: `https://github.com/YOUR_USERNAME/print-label-barcode-scanner/settings/pages`
+   - Under **Source**, select **GitHub Actions**
+   - Click **Save**
+
+2. Push to main branch:
+   ```powershell
+   git add .
+   git commit -m "Your changes"
+   git push origin main
+   ```
+
+3. That's it! The workflow automatically builds and deploys your app.
+   - Check the **Actions** tab to monitor deployment
+   - Your site will be at: `https://YOUR_USERNAME.github.io/print-label-barcode-scanner/`
+
+**See `GITHUB_PAGES_DEPLOYMENT.md` for detailed instructions.**
+
+---
+
+### Alternative: Manual Deployment with PowerShell Script
+
+Run the included deployment script:
+```powershell
+.\deploy-github-pages.ps1
+```
+
+The script will:
+- Build your Flutter web app with the correct base-href
+- Create and push to gh-pages branch
+- Guide you through the final setup steps
+
+---
+
+### Manual Step-by-Step Deployment
+
 ### Step 1: Initialize Git Repository
 ```powershell
 git init
