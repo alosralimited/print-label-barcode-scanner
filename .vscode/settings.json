@@ -1,4 +1,28 @@
 {
-    "cmake.sourceDirectory": "C:/Users/44740/OneDrive/Desktop/cache/print_label_barcode_scanner/linux",
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "gitlens.ai.largePromptWarningThreshold": 200000000,
+    "extensions.ignoreRecommendations": true,
+    "cmake.sourceDirectory": "C:/Users/44740/OneDrive/Documents/GitHub/print-label-barcode-scanner/windows",
+    "files.associations": {
+        "*.dart": "dart"
+    },
+    "dart.flutterSdkPath": null,
+    "dart.previewFlutterUiGuides": true,
+    "github.copilot.advanced": {
+        "markitdown.enabled": false
+    },
+    "ai-studio.markitdown.enabled": false,
+    "github.copilot.enable": {
+        "markdown": false,
+        "markitdown": false
+    },
+    "copilot.markitdown.enabled": false,
+    "markdown.preview.markitdown": false,
+    "workbench.editorAssociations": {
+        "*.md": "default"
+    },
+    "extensions.autoUpdate": false,
+    "github.copilot.chat.welcomeMessage": "never",
+    "github.copilot.renameSuggestions.triggerAutomatically": false,
+    "github.copilot.chat.virtualTools.threshold": 50,
+    "chat.agent.maxRequests": 250
 }
