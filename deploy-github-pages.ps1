@@ -24,10 +24,6 @@ if (-Not (Test-Path ".git")) {
     git commit -m "Initial commit"
 }
 
-# Prompt for GitHub username
-$username = Read-Host "Enter your GitHub username"
-$repoName = "print-label-barcode-scanner"
-
 Write-Host "📤 Setting up remote repository..." -ForegroundColor Yellow
 git remote remove origin 2>$null
 git remote add origin "https://github.com/$username/$repoName.git"
