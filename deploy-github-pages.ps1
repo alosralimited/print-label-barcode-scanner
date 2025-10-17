@@ -3,10 +3,16 @@
 
 Write-Host "🚀 Deploying to GitHub Pages..." -ForegroundColor Cyan
 
-# Check if build/web exists
+# Prompt for GitHub username
+$username = Read-Host "Enter your GitHub username"
+$repoName = "print-label-barcode-scanner"
+
+# Build the web app with correct base-href
+Write-Host "🔨 Building Flutter web app..." -ForegroundColor Yellow
+flutter build web --release --base-href="/$repoName/"
+
 if (-Not (Test-Path "build\web")) {
-    Write-Host "❌ Error: build/web folder not found!" -ForegroundColor Red
-    Write-Host "Run 'flutter build web --release' first" -ForegroundColor Yellow
+    Write-Host "❌ Error: Build failed!" -ForegroundColor Red
     exit 1
 }
 
@@ -60,7 +66,11 @@ Write-Host "   https://$username.github.io/$repoName/" -ForegroundColor White
 Write-Host ""
 Write-Host "⚙️  Next steps:" -ForegroundColor Yellow
 Write-Host "   1. Go to: https://github.com/$username/$repoName/settings/pages"
-Write-Host "   2. Under 'Source', select 'gh-pages' branch"
-Write-Host "   3. Click 'Save'"
-Write-Host "   4. Wait 1-2 minutes for deployment"
+Write-Host "   2. Under 'Source', select 'Deploy from a branch'"
+Write-Host "   3. Select 'gh-pages' branch and '/ (root)' folder"
+Write-Host "   4. Click 'Save'"
+Write-Host "   5. Wait 1-2 minutes for deployment"
+Write-Host ""
+Write-Host "💡 Tip: Use GitHub Actions for automatic deployment!" -ForegroundColor Cyan
+Write-Host "   The repository includes a workflow file that will auto-deploy on push to main."
 Write-Host ""
