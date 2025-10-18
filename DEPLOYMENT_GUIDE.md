@@ -169,7 +169,8 @@ firebase deploy --only hosting
 
 ## 🎉 Recommended: Use Vercel
 
-**Why Vercel?**
+### Why Vercel?
+
 - Easiest deployment (literally drag & drop)
 - Instant HTTPS
 - Free custom domains

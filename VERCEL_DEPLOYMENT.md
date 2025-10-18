@@ -18,7 +18,7 @@ git commit -m "Update deployment files and Flutter plugins"
 git push origin main
 ```
 
-**What this does:**
+#### What this does:
 
 - `git add .` - Stages all changed files (including build/web folder)
 - `git commit` - Saves changes locally with a message
@@ -34,7 +34,7 @@ git push origin main
 
 Open this link: **<https://vercel.com/new>**
 
-**What you'll see:**
+#### What you'll see:
 
 - A page titled "Import Git Repository" or "Let's build something new"
 - Options to connect with GitHub, GitLab, or Bitbucket
@@ -46,7 +46,7 @@ Open this link: **<https://vercel.com/new>**
 3. Click **"Authorize Vercel"**
 4. If asked, enter your GitHub password
 
-**What this does:**
+#### What this does:
 
 - Gives Vercel permission to read your GitHub repositories
 - You only need to do this once
@@ -57,7 +57,7 @@ Open this link: **<https://vercel.com/new>**
 2. Find **"alosralimited/print-label-barcode-scanner"**
 3. Click **"Import"** next to it
 
-**If you don't see your repository:**
+#### If you don't see your repository:
 
 - Click "Adjust GitHub App Permissions"
 - Select "All repositories" or just your repository
@@ -67,32 +67,32 @@ Open this link: **<https://vercel.com/new>**
 
 You'll see a configuration page with these fields:
 
-**Project Name:**
+#### Project Name:
 
 - Leave as default or change it (e.g., "barcode-scanner")
 
-**Framework Preset:**
+#### Framework Preset:
 
 - Click the dropdown
 - Select **"Other"** (Flutter is not in the list, so choose "Other")
 
-**Root Directory:**
+#### Root Directory:
 
 - Leave as **"./"** (default)
 
-**Build Command:**
+#### Build Command:
 
 - Leave this EMPTY (recommended)
 - Why: Vercel runners don't have Flutter by default. Leaving it empty tells Vercel to serve the files you already built and committed.
 - Only if you really want Vercel to build, set: `flutter build web --release` (requires a custom setup). Exit code 127 or a message like `lutter build web --release` indicates a missing/typo build command.
 
-**Output Directory:**
+#### Output Directory:
 
 - Enter: `build/web`
 - **What this does:** Tells Vercel where to find your built files
 - **IMPORTANT:** This is the key setting! Make sure it says `build/web`
 
-**Install Command:**
+#### Install Command:
 
 - Leave this EMPTY
 
@@ -102,19 +102,19 @@ You'll see a configuration page with these fields:
 2. Vercel will start building your app
 3. You'll see a progress screen with logs
 
-**What's happening:**
+#### What's happening:
 
 - Vercel downloads your code from GitHub
 - Since Build Command is empty, it skips building and serves `build/web` as static files
 - It uploads the `build/web` folder to Vercel's CDN
 
-**This takes 2-5 minutes.**
+#### This takes 2-5 minutes.
 
 ### Step 7: Get Your Live URL
 
 When deployment finishes, you'll see:
 
-**🎉 Congratulations! Your project has been deployed!**
+#### 🎉 Congratulations! Your project has been deployed!
 
 You'll see:
 
@@ -140,7 +140,8 @@ You'll see:
 
 This happens when Vercel tries to run a build command but Flutter isn't installed or the command is mistyped (e.g., `lutter build web --release`).
 
-**Fix (no server build):**
+#### Fix (no server build):
+
 1. Go to Vercel → Project → Settings → Build & Development Settings
 2. Set:
     - Build Command: EMPTY
@@ -164,7 +165,7 @@ Optional: Add `vercel.json` (already added) so Vercel serves from `build/web` au
 
 ### Problem: Blank page or "404 Not Found"
 
-**Check:**
+#### Check:
 
 1. Output Directory is set to `build/web` (not just `build`)
 2. Your `build/web/index.html` exists in GitHub
@@ -172,13 +173,13 @@ Optional: Add `vercel.json` (already added) so Vercel serves from `build/web` au
 
 ### Problem: Camera doesn't work
 
-**On iPhone:**
+#### On iPhone:
 
 - iOS requires HTTPS (Vercel provides this automatically ✅)
 - Make sure you clicked "Allow" when prompted for camera access
 - Try Safari browser (works best on iOS)
 
-**On Computer:**
+#### On Computer:
 
 - Some browsers block camera on localhost
 - Vercel's HTTPS URL should work fine
@@ -218,7 +219,7 @@ When you make changes to your Flutter app:
    - No need to do anything else
    - Wait 2 minutes, your site is updated
 
-**OR manually trigger a redeploy:**
+#### OR manually trigger a redeploy:
 
 - Go to your Vercel dashboard
 - Click your project
