@@ -3,10 +3,13 @@
 
 Write-Host "🚀 Deploying to GitHub Pages..." -ForegroundColor Cyan
 
-# Check if build/web exists
+# Build Flutter web with correct base-href
+Write-Host "🔨 Building Flutter web app..." -ForegroundColor Yellow
+flutter build web --release --base-href /print-label-barcode-scanner/
+
+# Check if build succeeded
 if (-Not (Test-Path "build\web")) {
-    Write-Host "❌ Error: build/web folder not found!" -ForegroundColor Red
-    Write-Host "Run 'flutter build web --release' first" -ForegroundColor Yellow
+    Write-Host "❌ Error: Build failed!" -ForegroundColor Red
     exit 1
 }
 
@@ -40,8 +43,11 @@ git rm -rf . 2>$null
 Write-Host "📋 Copying web files..." -ForegroundColor Yellow
 Copy-Item -Path "build\web\*" -Destination "." -Recurse -Force
 
-# Create .nojekyll for Flutter
+# Create .nojekyll for Flutter (prevents Jekyll processing)
 New-Item -Path ".nojekyll" -ItemType File -Force | Out-Null
+
+# Create 404.html for SPA routing
+Copy-Item -Path "index.html" -Destination "404.html" -Force
 
 # Commit and push
 Write-Host "📤 Deploying to GitHub Pages..." -ForegroundColor Yellow
