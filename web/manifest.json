@@ -1,11 +1,11 @@
 {
-    "name": "print_label_barcode_scanner",
-    "short_name": "print_label_barcode_scanner",
+    "name": "Barcode Scanner",
+    "short_name": "Barcode Scanner",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Scan barcodes using your device camera. Works on web, iOS, and Android.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
