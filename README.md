@@ -1,16 +1,29 @@
-# print_label_barcode_scanner
+# print-label-barcode-scanner
 
-A new Flutter project.
+[![Deploy Flutter Web to GitHub Pages](https://github.com/alosralimited/print-label-barcode-scanner/actions/workflows/deploy-github-pages.yml/badge.svg?branch=main)](https://github.com/alosralimited/print-label-barcode-scanner/actions/workflows/deploy-github-pages.yml)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Falosralimited.github.io%2Fprint-label-barcode-scanner%2F&up_message=Live&down_message=Offline&label=GitHub%20Pages)](https://alosralimited.github.io/print-label-barcode-scanner/)
 
-## Getting Started
+Flutter web app for scanning barcodes and printing labels.
 
-This project is a starting point for a Flutter application.
+## Live
 
-A few resources to get you started if this is your first Flutter project:
+- App URL: [https://alosralimited.github.io/print-label-barcode-scanner/](https://alosralimited.github.io/print-label-barcode-scanner/)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Try it on iPad/iPhone
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Open Safari and visit the live URL above
+- Tap Share → Add to Home Screen
+- Open from your home screen and allow Camera permission when prompted
+
+More details: see `DEPLOYMENT_READY.md` (Testing on iPad/iPhone section).
+
+## Development
+
+- Build web locally (release): `flutter build web --release`
+- Run tests: `flutter test`
+
+## Troubleshooting
+
+- If the app doesn’t load right after a push, wait 2–3 minutes for deployment
+- Hard refresh if changes don’t appear
+- Ensure camera permissions are granted on iOS
