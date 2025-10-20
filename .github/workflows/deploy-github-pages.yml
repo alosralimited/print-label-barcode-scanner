@@ -41,7 +41,10 @@ jobs:
         run: cp build/web/index.html build/web/404.html
 
       - name: Copy CNAME file for custom domain
-        run: cp web/CNAME build/web/CNAME
+        run: |
+          if [ -f web/CNAME ]; then
+            cp web/CNAME build/web/CNAME
+          fi
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-artifact@v4
