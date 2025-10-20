@@ -50,7 +50,8 @@ You should see:
 2. Safari will ask: **"[Your app] Would Like to Access the Camera"**
 3. **Tap "Allow"**
 
-**Important Notes:**
+#### Important Notes:
+
 - This permission request only appears the first time
 - If you accidentally tapped "Don't Allow", you can fix it:
   - Go to iPhone Settings → Safari → Camera
@@ -170,34 +171,44 @@ If you want a real iOS app (not web-based), you can build and install it using X
 ## 🔧 Troubleshooting
 
 ### Problem: Camera Permission Not Showing
-**Solution:**
+
+#### Solution:
+
 - Make sure you're using **Safari** (not Chrome or other browsers)
 - Ensure the site is **HTTPS** (Vercel provides this automatically)
 - Check Settings → Safari → Camera is enabled
 
 ### Problem: Camera Shows Black Screen
-**Solution:**
+
+#### Solution:
+
 - Close Safari completely (swipe up from app switcher)
 - Reopen Safari and try again
 - Restart your iPhone if issue persists
 - Make sure no other app is using the camera
 
 ### Problem: "Scanned:" Message Doesn't Show
-**Solution:**
+
+#### Solution:
+
 - Make sure the barcode is clear and well-lit
 - Hold your iPhone steady for 1-2 seconds
 - Try moving closer or farther from the barcode
 - Clean your iPhone camera lens
 
 ### Problem: App Doesn't Load on iPhone
-**Solution:**
+
+#### Solution:
+
 - Check that Vercel deployment succeeded (no 404 error)
 - Make sure you're using the correct Vercel URL
 - Try opening in Safari Private Browsing mode
 - Clear Safari cache: Settings → Safari → Clear History and Website Data
 
 ### Problem: "Add to Home Screen" Doesn't Work
-**Solution:**
+
+#### Solution:
+
 - Must use Safari (this feature doesn't work in other browsers)
 - Make sure you're on the actual site page (not a loading screen)
 - Try refreshing the page first, then add to home screen
@@ -238,16 +249,19 @@ When scanning:
 
 ## 🎉 You're All Set!
 
-**Recommended Path:**
+#### Recommended Path:
+
 1. Start with **Option 1** (Web App) - it's instant and works great
 2. Add to home screen for easy access
 3. If you need offline support or faster performance, try **Option 2** (Native App)
 
-**Your Live URL:**
+#### Your Live URL:
+
 - After Vercel deployment: `https://print-label-barcode-scanner.vercel.app`
 - Or check your Vercel dashboard for the exact URL
 
-**Questions?**
+#### Questions?
+
 - If something doesn't work, check the Troubleshooting section above
 - Make sure Vercel deployment is complete and successful
 - Ensure you're using Safari on iPhone (not Chrome)

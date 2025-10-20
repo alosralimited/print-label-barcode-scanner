@@ -9,14 +9,16 @@ Welcome to the Print Label Barcode Scanner project! This document helps you navi
 ### 1. **Git & Vercel Deployment Guide** 📘
 **File:** `GIT_AND_VERCEL_GUIDE.md`
 
-**What's inside:**
+#### What's inside:
+
 - Complete Git setup and basics
 - GitHub repository creation
 - Vercel deployment step-by-step
 - Update workflows
 - Troubleshooting Git and Vercel issues
 
-**When to use:**
+#### When to use:
+
 - First time setting up Git
 - Creating GitHub repository
 - Deploying to Vercel
@@ -30,14 +32,16 @@ Welcome to the Print Label Barcode Scanner project! This document helps you navi
 ### 2. **iPhone Usage Guide** 📱
 **File:** `IPHONE_USAGE_GUIDE.md`
 
-**What's inside:**
+#### What's inside:
+
 - How to use the app on iPhone (web version)
 - Adding app to home screen
 - Building native iOS app with Xcode
 - Camera permission troubleshooting
 - Comparison: Web vs Native app
 
-**When to use:**
+#### When to use:
+
 - You want to test on iPhone
 - Camera not working on mobile
 - Adding app to home screen
@@ -50,14 +54,16 @@ Welcome to the Print Label Barcode Scanner project! This document helps you navi
 ### 3. **Vercel Deployment Guide** 🚀
 **File:** `VERCEL_DEPLOYMENT.md`
 
-**What's inside:**
+#### What's inside:
+
 - Vercel-specific deployment instructions
 - Build settings configuration
 - Troubleshooting 404 and build errors
 - Auto-deployment setup
 - Benefits of Vercel
 
-**When to use:**
+#### When to use:
+
 - Quick Vercel deployment reference
 - Fixing specific Vercel errors
 - Understanding Vercel settings
@@ -156,7 +162,7 @@ Welcome to the Print Label Barcode Scanner project! This document helps you navi
 ### `deploy-vercel.ps1`
 **Purpose:** Automate build and deployment
 
-**Usage:**
+#### Usage:
 ```powershell
 # Default commit message
 .\deploy-vercel.ps1
@@ -165,7 +171,8 @@ Welcome to the Print Label Barcode Scanner project! This document helps you navi
 .\deploy-vercel.ps1 -Message "Fixed camera on iOS"
 ```
 
-**What it does:**
+#### What it does:
+
 1. Builds Flutter web app
 2. Stages `build/web` folder
 3. Commits changes
@@ -177,7 +184,7 @@ Welcome to the Print Label Barcode Scanner project! This document helps you navi
 ### `update-deployment.ps1`
 **Purpose:** Deploy to GitHub Pages (alternative to Vercel)
 
-**Usage:**
+#### Usage:
 ```powershell
 .\update-deployment.ps1
 ```
@@ -212,7 +219,10 @@ print_label_barcode_scanner/
 ## ❓ FAQ
 
 ### Q: Which guide should I read first?
-**A:** Depends on your experience:
+
+#### A:
+
+Depends on your experience:
 - Never used Git/Vercel? → `GIT_AND_VERCEL_GUIDE.md`
 - Just need Vercel? → `VERCEL_DEPLOYMENT.md`
 - Want to use on iPhone? → `IPHONE_USAGE_GUIDE.md`
@@ -233,7 +243,9 @@ print_label_barcode_scanner/
 3. URL is shown at the top (e.g., `https://your-project.vercel.app`)
 
 ### Q: How do I update my deployed app?
-**A:**
+
+#### A:
+
 ```powershell
 # Build
 flutter build web --release
