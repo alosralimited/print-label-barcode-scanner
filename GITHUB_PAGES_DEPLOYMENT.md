@@ -107,6 +107,73 @@ flutter build web --release --web-renderer canvaskit --base-href /print-label-ba
 ### Live URL
 Your app is live at: `https://alosralimited.github.io/print-label-barcode-scanner/`
 
+## 🌐 Custom Domain Setup
+
+### Configure Custom Domain (alosralimited.com)
+
+This repository includes a CNAME file configured for the custom domain **alosralimited.com**.
+
+#### Steps to Complete Custom Domain Setup:
+
+1. **DNS Configuration on Squarespace:**
+   - Log into your Squarespace account
+   - Navigate to your domain DNS settings: [alosralimited.com DNS Settings](https://account.squarespace.com/domains/managed/alosralimited.com/dns/dns-settings)
+   - Add the following DNS records:
+
+   **For apex domain (alosralimited.com):**
+   ```
+   Type: A
+   Host: @
+   Points to: 185.199.108.153
+   
+   Type: A
+   Host: @
+   Points to: 185.199.109.153
+   
+   Type: A
+   Host: @
+   Points to: 185.199.110.153
+   
+   Type: A
+   Host: @
+   Points to: 185.199.111.153
+   ```
+
+   **For www subdomain (recommended):**
+   ```
+   Type: CNAME
+   Host: www
+   Points to: alosralimited.github.io
+   ```
+
+2. **GitHub Pages Custom Domain Configuration:**
+   - Go to your repository settings: Settings → Pages
+   - Under "Custom domain", enter: `alosralimited.com`
+   - Click "Save"
+   - Wait for DNS check to complete (can take up to 24-48 hours)
+   - Once verified, enable "Enforce HTTPS"
+
+3. **Verify DNS Propagation:**
+   - Use [dnschecker.org](https://dnschecker.org) to check if your CNAME record is visible globally
+   - Check for: `alosralimited.com` → should point to `alosralimited.github.io`
+   - DNS changes can take 24-48 hours to fully propagate
+
+#### Troubleshooting Custom Domain:
+
+- **CNAME record not visible**: Ensure you've saved changes in Squarespace DNS settings and wait for propagation
+- **"Domain is improperly configured"**: Verify all A records and CNAME records are correct
+- **HTTPS not working**: Wait for DNS to fully propagate, then enable "Enforce HTTPS" in GitHub Pages settings
+- **404 errors**: The CNAME file is automatically deployed with your site, no manual action needed
+
+#### Important Notes:
+
+- The CNAME file is located at `web/CNAME` and contains the domain name
+- The GitHub Actions workflow automatically copies this file to the deployment
+- Do not remove or modify the CNAME file unless changing domains
+- After DNS is configured, your site will be accessible at both:
+  - `https://alosralimited.com`
+  - `https://www.alosralimited.com` (if www CNAME is configured)
+
 ## 🔄 Updates
 
 To update your deployed app:

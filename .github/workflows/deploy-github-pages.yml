@@ -40,6 +40,9 @@ jobs:
       - name: Create 404.html for SPA routing
         run: cp build/web/index.html build/web/404.html
 
+      - name: Copy CNAME file for custom domain
+        run: cp web/CNAME build/web/CNAME
+
       - name: Upload GitHub Pages artifact
         uses: actions/upload-artifact@v4
         with:
