@@ -32,7 +32,7 @@ jobs:
         run: |
           flutter build web \
             --release \
-            --base-href /print-label-barcode-scanner/
+            --base-href /
 
       - name: Add .nojekyll file
         run: touch build/web/.nojekyll
