@@ -35,11 +35,11 @@ jobs:
       - name: Add .nojekyll file
         run: touch build/web/.nojekyll
 
-      - name: Add CNAME file for custom domain
-        run: echo "scanner.alosralimited.com" > build/web/CNAME
-
       - name: Create 404.html for SPA routing
         run: cp build/web/index.html build/web/404.html
+
+      - name: Copy CNAME file for custom domain
+        run: cp web/CNAME build/web/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
