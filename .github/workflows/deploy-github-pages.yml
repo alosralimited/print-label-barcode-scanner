@@ -25,9 +25,7 @@ jobs:
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+
       - name: Build Flutter web
         run: |
           flutter build web \
@@ -42,6 +40,9 @@ jobs:
 
       - name: Create 404.html for SPA routing
         run: cp build/web/index.html build/web/404.html
+
+      - name: Copy CNAME file for custom domain
+        run: cp web/CNAME build/web/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
