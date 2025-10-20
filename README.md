@@ -1,4 +1,4 @@
-# print-label-barcode-scanner
+<https://github.com/alosralimited/print-label-barcode-scanner/settings/pages#> print-label-barcode-scanner
 
 [![Deploy Flutter Web to GitHub Pages](https://github.com/alosralimited/print-label-barcode-scanner/actions/workflows/deploy-github-pages.yml/badge.svg?branch=main)](https://github.com/alosralimited/print-label-barcode-scanner/actions/workflows/deploy-github-pages.yml)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Falosralimited.github.io%2Fprint-label-barcode-scanner%2F&up_message=Live&down_message=Offline&label=GitHub%20Pages)](https://alosralimited.github.io/print-label-barcode-scanner/)
@@ -8,6 +8,7 @@ Flutter web app for scanning barcodes and printing labels.
 ## Live
 
 - App URL: [https://alosralimited.github.io/print-label-barcode-scanner/](https://alosralimited.github.io/print-label-barcode-scanner/)
+- Custom Domain: [https://alosralimited.com](https://alosralimited.com) (once DNS is configured - see `CUSTOM_DOMAIN_SETUP.md`)
 
 ## Try it on iPad/iPhone
 

@@ -7,6 +7,12 @@ Write-Host "🚀 Deploying to GitHub Pages..." -ForegroundColor Cyan
 Write-Host "🔨 Building Flutter web app..." -ForegroundColor Yellow
 flutter build web --release --base-href /print-label-barcode-scanner/
 
+# Copy CNAME file to build output
+if (Test-Path "web\CNAME") {
+    Write-Host "📄 Copying CNAME file..." -ForegroundColor Yellow
+    Copy-Item -Path "web\CNAME" -Destination "build\web\CNAME" -Force
+}
+
 # Check if build succeeded
 if (-Not (Test-Path "build\web")) {
     Write-Host "❌ Error: Build failed!" -ForegroundColor Red
