@@ -8,6 +8,7 @@ Flutter web app for scanning barcodes and printing labels.
 ## Live
 
 - App URL: [https://alosralimited.github.io/print-label-barcode-scanner/](https://alosralimited.github.io/print-label-barcode-scanner/)
+- Custom Domain: [https://alosralimited.com](https://alosralimited.com) (once DNS is configured - see `CUSTOM_DOMAIN_SETUP.md`)
 
 ## Try it on iPad/iPhone
 
