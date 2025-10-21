@@ -26,6 +26,8 @@ More details: see `DEPLOYMENT_READY.md` (Testing on iPad/iPhone section).
 
 For email setup and DNS configuration related to the alosralimited.com domain:
 
+- **[Email Documentation Index](EMAIL_DOCS_INDEX.md)** - Start here for all email documentation
+- [Quick Start Guide](EMAIL_QUICK_START.md) - 10-minute email setup
 - [Email Setup Guide](EMAIL_SETUP.md) - Complete guide for MX, SPF, DKIM, DMARC records
 - [Email Alias Configuration](EMAIL_ALIAS_GUIDE.md) - Managing email aliases (sales@, info@)
 - [DNS Configuration Reference](DNS_CONFIGURATION.md) - DNS records and troubleshooting
