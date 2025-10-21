@@ -22,6 +22,14 @@ More details: see `DEPLOYMENT_READY.md` (Testing on iPad/iPhone section).
 - Build web locally (release): `flutter build web --release`
 - Run tests: `flutter test`
 
+## Email Configuration
+
+For email setup and DNS configuration related to the alosralimited.com domain:
+
+- [Email Setup Guide](EMAIL_SETUP.md) - Complete guide for MX, SPF, DKIM, DMARC records
+- [Email Alias Configuration](EMAIL_ALIAS_GUIDE.md) - Managing email aliases (sales@, info@)
+- [DNS Configuration Reference](DNS_CONFIGURATION.md) - DNS records and troubleshooting
+
 ## Troubleshooting
 
 - If the app doesn’t load right after a push, wait 2–3 minutes for deployment

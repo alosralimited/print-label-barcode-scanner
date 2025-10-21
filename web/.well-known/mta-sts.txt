@@ -1,0 +1,5 @@
+version: STSv1
+mode: enforce
+mx: mx1.alosralimited.com
+mx: mx2.alosralimited.com
+max_age: 604800
