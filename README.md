@@ -17,6 +17,10 @@ Flutter web app for scanning barcodes and printing labels.
 
 More details: see `DEPLOYMENT_READY.md` (Testing on iPad/iPhone section).
 
+## Business Configuration
+
+- **Email Setup**: See [`EMAIL_CONFIGURATION.md`](EMAIL_CONFIGURATION.md) for domain email configuration
+
 ## Development
 
 - Build web locally (release): `flutter build web --release`
