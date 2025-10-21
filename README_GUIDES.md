@@ -66,6 +66,29 @@ Welcome to the Print Label Barcode Scanner project! This document helps you navi
 
 ---
 
+### 4. **Email Migration and DNS Configuration Guide** 📧
+**File:** `EMAIL_MIGRATION_GUIDE.md`
+
+**What's inside:**
+- Email configuration for alosralimited.com domain
+- Reversing email migrations
+- Setting up email aliases (sales@ and info@)
+- DNS consolidation strategy
+- MX, SPF, DKIM, DMARC records setup
+- WooCommerce email integration
+- Email deliverability troubleshooting
+
+**When to use:**
+- Managing company email setup
+- Configuring DNS records
+- Setting up WooCommerce email notifications
+- Troubleshooting email delivery issues
+- Consolidating DNS hosting providers
+
+**Start here if:** You need to manage email infrastructure or integrate WooCommerce
+
+---
+
 ## 🎯 Quick Start Paths
 
 ### Path 1: Complete Beginner (Never used Git/Vercel)
@@ -149,6 +172,18 @@ Welcome to the Print Label Barcode Scanner project! This document helps you navi
 ### Fix camera permission on iPhone
 → **Guide:** `IPHONE_USAGE_GUIDE.md` → Troubleshooting
 
+### Configure email and DNS settings
+→ **Guide:** `EMAIL_MIGRATION_GUIDE.md`
+
+### Reverse email migration
+→ **Guide:** `EMAIL_MIGRATION_GUIDE.md` → Reversing Email Migration
+
+### Set up WooCommerce email
+→ **Guide:** `EMAIL_MIGRATION_GUIDE.md` → WooCommerce Integration
+
+### Troubleshoot email deliverability
+→ **Guide:** `EMAIL_MIGRATION_GUIDE.md` → Email Deliverability Checks
+
 ---
 
 ## 📜 Helper Scripts
@@ -201,6 +236,7 @@ print_label_barcode_scanner/
 ├── GIT_AND_VERCEL_GUIDE.md      # 📘 Complete Git & Vercel guide
 ├── IPHONE_USAGE_GUIDE.md        # 📱 iPhone usage instructions
 ├── VERCEL_DEPLOYMENT.md         # 🚀 Vercel-specific guide
+├── EMAIL_MIGRATION_GUIDE.md     # 📧 Email & DNS configuration guide
 ├── README_GUIDES.md             # 📚 This file!
 ├── deploy-vercel.ps1            # Deployment script
 ├── vercel.json                  # Vercel configuration
@@ -306,6 +342,11 @@ But Vercel is recommended for this project (easiest, no base href issues).
 
 ## 📝 Document Changelog
 
+- **2025-10-21:** Added Email Migration Guide
+  - Added `EMAIL_MIGRATION_GUIDE.md`
+  - Documentation for email configuration and DNS setup
+  - WooCommerce integration guide
+  
 - **2025-10-15:** Created comprehensive guides
   - Added `GIT_AND_VERCEL_GUIDE.md`
   - Added `IPHONE_USAGE_GUIDE.md`
